@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/toolinfo-0.1",
+  "version": "0.1.0",
+  "tools": [
+    {
+      "name": "registry.lookup",
+      "description": "Look up a tool manifest and its available actions.",
+      "parameters": [
+        {
+          "name": "tool_name",
+          "type": "string",
+          "description": "Name of the tool to look up.",
+          "required": true
+        }
+      ],
+      "returns": "Manifest metadata including actions and parameters.",
+      "safety": "read-only"
+    },
+    {
+      "name": "network.ping",
+      "description": "Perform a lightweight connectivity probe to the orchestrator backend.",
+      "parameters": [
+        {
+          "name": "endpoint",
+          "type": "string",
+          "description": "Relative endpoint path (e.g., /health).",
+          "required": false
+        }
+      ],
+      "returns": "HTTP status code and latency metrics.",
+      "safety": "idempotent"
+    },
+    {
+      "name": "hardware.set_actuator",
+      "description": "Set a simulated actuator value for the PC adapter.",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Actuator identifier.",
+          "required": true
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "description": "Desired target value.",
+          "required": true
+        }
+      ],
+      "returns": "Echo of the value applied.",
+      "safety": "side-effect"
+    }
+  ]
+}
