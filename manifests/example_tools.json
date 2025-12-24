@@ -1,0 +1,38 @@
+{
+  "name": "core-orchestrator",
+  "version": "0.1.0",
+  "description": "Built-in orchestration utilities and diagnostics.",
+  "tags": ["core", "diagnostics"],
+  "actions": [
+    {
+      "name": "registry:list",
+      "description": "List available tools and actions.",
+      "parameters": []
+    },
+    {
+      "name": "network:probe",
+      "description": "Probe network connectivity to a configured endpoint.",
+      "parameters": [
+        {
+          "name": "endpoint",
+          "type": "string",
+          "description": "Relative path to probe (default /health).",
+          "required": false,
+          "default": "/health"
+        }
+      ]
+    },
+    {
+      "name": "hardware:read",
+      "description": "Read a simulated hardware sensor value.",
+      "parameters": [
+        {
+          "name": "sensor",
+          "type": "string",
+          "description": "Sensor identifier to read.",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "core-orchestrator"
+version = "0.1.0"
+description = "Modular AI orchestrator with TUI, registry, network, auth, and hardware abstractions"
+readme = "README.md"
+authors = [
+  { name = "Core Orchestrator Team" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+  "textual>=0.40",
+  "httpx[http2]",
+  "pydantic>=2.0",
+  "keyring",
+  "sqlalchemy>=2.0",
+  "pytest>=7.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "black==24.10.0",
+  "ruff==0.6.8",
+  "pytest-asyncio>=0.23"
+]
+
+[tool.setuptools.packages.find]
+include = ["core", "core.*", "ai", "ai.*"]
+
+[tool.setuptools.package-data]
+"core" = ["py.typed"]
+"ai" = ["protocol/*.json", "protocol/*.md"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+include = "\\.pyi?$"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = [
+  "E",
+  "F",
+  "I",
+  "B",
+  "UP",
+  "ANN",
+  "C4",
+  "SIM",
+  "RUF"
+]
+ignore = [
+  "ANN101",  # self type hints for methods
+  "ANN102"   # cls type hints for classmethods
+]
+fix = true
+
+[tool.ruff.lint.isort]
+known-first-party = ["core"]
+combine-as-imports = true
+force-sort-within-sections = true
