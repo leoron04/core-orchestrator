@@ -1,0 +1,6 @@
+{
+  "name": "NotesModule",
+  "version": "0.1.0",
+  "description": "Persistent note-taking utilities",
+  "entry": "modules.notes.module:NotesModule"
+}

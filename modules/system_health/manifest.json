@@ -1,0 +1,6 @@
+{
+  "name": "SystemHealthModule",
+  "version": "0.1.0",
+  "description": "Reports orchestrator system health based on memory and network",
+  "entry": "modules.system_health.module:SystemHealthModule"
+}

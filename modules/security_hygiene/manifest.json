@@ -1,0 +1,6 @@
+{
+  "name": "SecurityHygieneModule",
+  "version": "0.1.0",
+  "description": "Simple security hygiene checklist and reminders",
+  "entry": "modules.security_hygiene.module:SecurityHygieneModule"
+}
