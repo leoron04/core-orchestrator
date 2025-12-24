@@ -1,0 +1,6 @@
+{
+  "name": "RoutineModule",
+  "version": "0.1.0",
+  "description": "Routine planning and checklist utilities",
+  "entry": "modules.routine.module:RoutineModule"
+}

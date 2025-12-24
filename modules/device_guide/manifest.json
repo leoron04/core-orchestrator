@@ -1,0 +1,6 @@
+{
+  "name": "DeviceGuideModule",
+  "version": "0.1.0",
+  "description": "Guides for device setup and troubleshooting",
+  "entry": "modules.device_guide.module:DeviceGuideModule"
+}
